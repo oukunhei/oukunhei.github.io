@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yunxi Ou · CV</title>
+  <!-- Minimal style, clean & academic -->
+  <style>
+    /* ——— RESET & GLOBAL ——— */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafafa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e2f;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+      padding: 2.5rem 2.2rem;
+    }
+
+    /* ——— TYPOGRAPHY ——— */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      font-weight: 380;
+      color: #4a4a5a;
+      border-bottom: 1px solid #eaeef2;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 550;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.2px;
+      border-bottom: 1px solid #e0e6eb;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 570;
+      margin-bottom: 0.15rem;
+      color: #12121c;
+    }
+
+    .date {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #6f6f8a;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+
+    /* ——— CONTACT / TOP ——— */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      color: #2e2e45;
+    }
+
+    .contact-row a {
+      color: #1e1e2f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b5b5cc;
+    }
+
+    .contact-row a:hover {
+      border-bottom: 1px solid #1e1e2f;
+    }
+
+    /* ——— grids / lists ——— */
+    .project-item, .activity-item, .education-meta {
+      margin-bottom: 1.3rem;
+    }
+
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: #2d2d3a;
+      margin-top: 0.2rem;
+      padding-right: 0.5rem;
+    }
+
+    ul.skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    ul.skill-list li {
+      background-color: #f0f2f6;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #1d1d2b;
+    }
+
+    /* education & honors */
+    .edu-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .institution {
+      font-weight: 530;
+    }
+
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.8rem;
+      margin: 0.5rem 0 0.8rem 0;
+      font-size: 0.88rem;
+      color: #3a3a4f;
+    }
+
+    .course-list span {
+      background: #f5f7fa;
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+    }
+
+    .honor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.45rem 1rem;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+
+    .honor-item {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .honor-badge {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #8f8fb1;
+      border-radius: 1px;
+      margin-right: 0.5rem;
+    }
+
+    /* small */
+    .footnote {
+      border-top: 1px solid #eaeef2;
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #5f5f78;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footnote a {
+      color: #2e2e4a;
+      text-decoration: none;
+      border-bottom: 1px dotted #aaaac9;
+    }
+
+    /* make sure everything is clean */
+    hr {
+      border: none;
+      border-top: 1px solid #edf2f7;
+      margin: 0.8rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header: name + brief -->
+  <h1>Yunxi Ou · 欧韵曦</h1>
+  <div class="subhead">
+    <span>BSc Data Science & Big Data Technology · HKUST(GZ) · 2027</span>
+    <span style="font-weight: 350; font-size: 0.9rem;">GPA: 3.362 / 4.3</span>
+  </div>
+
+  <!-- contact row -->
+  <div class="contact-row">
+    <span>📧 <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
+    <span>🐙 <a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a></span>
+    <span>📍 Guangzhou · Hong Kong</span>
+  </div>
+
+  <!-- ===== EDUCATION ===== -->
+  <h2>🎓 Education</h2>
+  <div class="education-meta">
+    <div class="edu-line">
+      <span class="institution">The Hong Kong University of Science and Technology (Guangzhou)</span>
+      <span class="date">2023 – 2027 (expected)</span>
+    </div>
+    <div><span style="font-size:0.92rem; color:#2d2d4a;">B.Eng. in Data Science and Big Data Technology</span></div>
+    <div class="course-list">
+      <span>Deep Learning</span><span>NLP</span><span>Machine Learning</span><span>Cloud Computing</span>
+      <span>DBMS</span><span>Algorithm Design</span><span>Discrete Math</span><span>Applied Statistics</span>
+      <span>C++</span>
+    </div>
+  </div>
+
+  <!-- ===== PROJECTS ===== (most relevant first) -->
+  <h2>📌 Projects</h2>
+
+  <!-- NL2SQL -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>NL2SQL · text-to-SQL framework</h3>
+      <span class="date">Apr 2025 – Dec 2025</span>
+    </div>
+    <div class="project-desc">
+      Built an NL2SQL conversion framework on top of open-source LLMs. Used multilingual prompting to support multiple SQL dialects. Designed a grammar‑tree based selection algorithm, improving execution accuracy by ~4%.
+    </div>
+  </div>
+
+  <!-- Data science course project (AnkiDroid) -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>AnkiDroid · personalized learning report</h3>
+      <span class="date">Sep 2025 – Dec 2025</span>
+    </div>
+    <div class="project-desc">
+      Contributed to the open‑source AnkiDroid project: developed a personalized learning report feature. Handled user data collection and modeling, adopted GitHub Workflow for agile development and automated deployment.
+    </div>
+  </div>
+
+  <!-- Campus event system -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Campus Activity Registration & Management</h3>
+      <span class="date">Apr 2025 – Jun 2025</span>
+    </div>
+    <div class="project-desc">
+      Independently designed and implemented the data access and business logic layers (backend). Ensured efficient handling of full activity lifecycle. Main author of the project report.
+    </div>
+  </div>
+
+  <!-- LLM self-alignment (instruction inversion) -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>LLM self‑alignment via instruction inversion & filtering</h3>
+      <span class="date">Dec 2025</span>
+    </div>
+    <div class="project-desc">
+      Reproduced a self‑alignment pipeline: fine‑tuned a “response → instruction” reverse model with LoRA to generate synthetic data, added LLM‑based quality filtering to build high‑quality instruction set, then fine‑tuned the base LLM, forming a closed optimization loop.
+    </div>
+  </div>
+
+  <!-- climate change & power outage -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Power outage risk under climate & energy transition</h3>
+      <span class="date">Jun 2024 – Sep 2024</span>
+    </div>
+    <div class="project-desc">
+      Integrated global renewable energy and climate datasets, applied regression models to project future spatial distribution of power outage risks.
+    </div>
+  </div>
+
+  <!-- ===== ACTIVITIES & LEADERSHIP ===== -->
+  <h2>🎻 Activities & Leadership</h2>
+
+  <!-- 民乐社社长 -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>President · HKUST(GZ) Chinese Music Club</h3>
+      <span class="date">Aug 2025 – present</span>
+    </div>
+    <div class="project-desc">
+      Plan and lead recruitment, weekly rehearsals. Solely organized a special concert: venue coordination, program curation, and full promotional process.
+    </div>
+  </div>
+
+  <!-- PLACE summer camp TA -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Teaching Assistant · PLACE Summer Camp (HKUST-GZ)</h3>
+      <span class="date">Summer 2024 & 2025</span>
+    </div>
+    <div class="project-desc">
+      Assisted in ice‑breaking activities and team building; facilitated integration for international students, handled on‑site emergencies.
+    </div>
+  </div>
+
+  <!-- 15th national games volunteer -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Opening Ceremony Volunteer · 15th National Games (China)</h3>
+      <span class="date">Nov 2025</span>
+    </div>
+    <div class="project-desc">
+      Volunteered at the opening ceremony of the 2025 National Games.
+    </div>
+  </div>
+
+  <!-- ===== HONORS & AWARDS ===== -->
+  <h2>🏅 Honors & Awards</h2>
+  <div class="honor-grid">
+    <div class="honor-item"><span class="honor-badge"></span>2025 Hong Kong, Macau, Taiwan Second‑Class Scholarship</div>
+    <div class="honor-item"><span class="honor-badge"></span>4th University Electrical & Electronic Engineering Innovation Contest – Provincial Third Prize</div>
+    <div class="honor-item"><span class="honor-badge"></span>2024 HKUST(GZ) Undergraduate Research Project – Excellence Award</div>
+    <div class="honor-item"><span class="honor-badge"></span>HKUST(GZ) First‑Class Scholarship</div>
+  </div>
+
+  <!-- ===== SKILLS & TECH ===== (formatted as tags) -->
+  <h2>⚙️ Technical Proficiencies</h2>
+  <ul class="skill-list">
+    <li>Python</li><li>SQL</li><li>C++ (basic)</li><li>VibeCoding (Cursor/Copilot)</li>
+    <li>Transformer (Multi‑Head Attention, Pos. Encoding)</li><li>PyTorch (GPT experiments)</li>
+    <li>RAG (Retrieval‑Augmented Generation)</li><li>Linux environment</li>
+    <li>Cloud deployment / DevOps</li>
+  </ul>
+
+  <!-- additional line: open source / vibe coding -->
+  <div style="font-size:0.88rem; margin-top:1rem; color:#2d2d42;">
+    ⚡ <span style="background:#edf1f9; padding:0.1rem 0.6rem; border-radius:20px;">LoRA · GPT · RAG</span> 
+    <span style="margin-left:0.6rem;">🔥 experienced in fast prototyping with Cursor & Copilot</span>
+  </div>
+
+  <!-- minimalist footer with github + email -->
+  <div class="footnote">
+    <span>✨ minimalist CV – built as a single‑page web resume</span>
+    <span><a href="https://github.com/oukunhei" target="_blank">github/oukunhei</a> · okhou533@connect.hkust-gz.edu.cn</span>
+  </div>
+
+  <!-- tiny note: fully english, based on personal resume -->
+</div>
+<!-- container end -->
+</body>
+</html>
