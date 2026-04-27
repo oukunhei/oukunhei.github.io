@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yunxi Ou · CV</title>
-  <!-- Minimal style, clean & academic -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>欧韵曦 · 数据科学 · 香港科技大学（广州）</title>
   <style>
     /* ——— RESET & GLOBAL ——— */
     * {
@@ -14,36 +13,38 @@
     }
 
     body {
-      background-color: #fafafa;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: #1e1e2f;
+      background-color: #f7f9fc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #1a1e2b;
       line-height: 1.5;
       padding: 2rem 1rem;
     }
 
     .container {
-      max-width: 880px;
+      max-width: 960px;
       margin: 0 auto;
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
-      padding: 2.5rem 2.2rem;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+      padding: 2.4rem 2.2rem;
+      transition: all 0.2s;
     }
 
     /* ——— TYPOGRAPHY ——— */
     h1 {
       font-size: 2.4rem;
-      font-weight: 550;
-      letter-spacing: -0.01em;
+      font-weight: 620;
+      letter-spacing: -0.02em;
       line-height: 1.2;
       margin-bottom: 0.2rem;
+      color: #0b1120;
     }
 
     .subhead {
-      font-size: 1.1rem;
-      font-weight: 380;
-      color: #4a4a5a;
-      border-bottom: 1px solid #eaeef2;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #475569;
+      border-bottom: 1px solid #e9edf2;
       padding-bottom: 1.2rem;
       margin-bottom: 1.5rem;
       display: flex;
@@ -53,120 +54,153 @@
     }
 
     h2 {
-      font-size: 1.3rem;
-      font-weight: 550;
+      font-size: 1.35rem;
+      font-weight: 600;
       margin-top: 2rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
       letter-spacing: -0.2px;
-      border-bottom: 1px solid #e0e6eb;
-      padding-bottom: 0.3rem;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     h3 {
-      font-size: 1.05rem;
-      font-weight: 570;
-      margin-bottom: 0.15rem;
-      color: #12121c;
+      font-size: 1.06rem;
+      font-weight: 620;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
     }
 
     .date {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #6f6f8a;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.75rem;
+      font-weight: 450;
+      color: #5b6e8c;
       white-space: nowrap;
-      margin-left: 1rem;
+      background: #f1f5f9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      letter-spacing: -0.2px;
     }
 
-    /* ——— CONTACT / TOP ——— */
+    /* ——— CONTACT & TOP ——— */
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem 1.8rem;
-      margin-top: 0.25rem;
+      gap: 1.2rem 2rem;
+      margin: 0.5rem 0 1rem 0;
       font-size: 0.9rem;
-      color: #2e2e45;
+      color: #1e293b;
     }
 
     .contact-row a {
-      color: #1e1e2f;
+      color: #1e2f44;
       text-decoration: none;
-      border-bottom: 1px dotted #b5b5cc;
+      border-bottom: 1px dotted #94a3b8;
+      font-weight: 470;
     }
 
     .contact-row a:hover {
-      border-bottom: 1px solid #1e1e2f;
+      border-bottom: 1px solid #0f172a;
+      color: #000;
     }
 
-    /* ——— grids / lists ——— */
-    .project-item, .activity-item, .education-meta {
-      margin-bottom: 1.3rem;
+    .pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1e293b;
+      text-decoration: none;
+      transition: 0.2s;
     }
 
-    .project-header {
+    .pdf-link:hover {
+      background: #e2e8f0;
+    }
+
+    /* ——— RESEARCH/PROJECT CARDS ——— */
+    .research-item, .project-item, .activity-item {
+      margin-bottom: 1.7rem;
+    }
+
+    .research-header, .project-header {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .project-desc {
       font-size: 0.92rem;
-      color: #2d2d3a;
-      margin-top: 0.2rem;
-      padding-right: 0.5rem;
+      color: #2c3a4b;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+      padding-right: 0.2rem;
     }
 
+    .tech-tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e40af;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 24px;
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+      font-weight: 470;
+    }
+
+    .link-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      background: #f1f4f9;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #2c3e66;
+      font-weight: 480;
+      transition: 0.15s;
+    }
+
+    .link-icon:hover {
+      background: #e4e9f2;
+      color: #0f172a;
+    }
+
+    /* skills grid */
     ul.skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem 1rem;
+      gap: 0.6rem 0.9rem;
       list-style: none;
-      margin-top: 0.6rem;
+      margin: 0.8rem 0 0.4rem;
     }
 
     ul.skill-list li {
-      background-color: #f0f2f6;
-      padding: 0.2rem 0.9rem;
-      border-radius: 30px;
+      background-color: #f0f4fa;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
       font-size: 0.85rem;
-      color: #1d1d2b;
-    }
-
-    /* education & honors */
-    .edu-line {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .institution {
-      font-weight: 530;
-    }
-
-    .course-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem 0.8rem;
-      margin: 0.5rem 0 0.8rem 0;
-      font-size: 0.88rem;
-      color: #3a3a4f;
-    }
-
-    .course-list span {
-      background: #f5f7fa;
-      padding: 0.1rem 0.5rem;
-      border-radius: 20px;
+      font-weight: 470;
+      color: #1e2a3e;
     }
 
     .honor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.45rem 1rem;
-      margin: 0.5rem 0 0.5rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 0.55rem 1.2rem;
+      margin: 0.8rem 0 0.5rem;
     }
 
     .honor-item {
@@ -179,204 +213,278 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      background-color: #8f8fb1;
-      border-radius: 1px;
-      margin-right: 0.5rem;
+      background-color: #5b6e8c;
+      border-radius: 2px;
+      margin-right: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 0.5rem;
     }
 
-    /* small */
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .course-list span {
+      background: #f1f5f9;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #2c3e5c;
+    }
+
     .footnote {
-      border-top: 1px solid #eaeef2;
-      margin-top: 2rem;
+      border-top: 1px solid #e9edf2;
+      margin-top: 2.2rem;
       padding-top: 1.2rem;
       font-size: 0.8rem;
-      color: #5f5f78;
+      color: #5b6e8c;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
+
     .footnote a {
-      color: #2e2e4a;
+      color: #2c3e66;
       text-decoration: none;
-      border-bottom: 1px dotted #aaaac9;
+      border-bottom: 1px dotted #b9c3d4;
     }
 
-    /* make sure everything is clean */
-    hr {
-      border: none;
-      border-top: 1px solid #edf2f7;
-      margin: 0.8rem 0;
+    a {
+      text-decoration: none;
+    }
+
+    /* emphasis for DPC links */
+    .dpc-link-area {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        padding: 1.6rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .date {
+        white-space: normal;
+      }
     }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- header: name + brief -->
-  <h1>Ou Ocean Kun Hei · 欧韵曦</h1>
+  <!-- 头部信息 -->
+  <h1>欧韵曦 Ocean Ou · 韵曦</h1>
   <div class="subhead">
-    <span>BSc Data Science & Big Data Technology · HKUST(GZ) · 2027</span>
-    <span style="font-weight: 350; font-size: 0.9rem;">GPA: 3.362 / 4.3</span>
+    <span>数据科学与大数据技术 · 香港科技大学（广州）· 2027届</span>
+    <span style="font-weight: 450;">GPA: 3.362/4.3</span>
   </div>
 
-  <!-- contact row -->
   <div class="contact-row">
     <span>📧 <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
     <span>🐙 <a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a></span>
-    <span>📍 Guangzhou · Hong Kong</span>
+    <span>📍 广州 · 香港</span>
   </div>
-  
-  <!-- 在contact-row后面或footnote前面添加 -->
-  <div style="margin: 1.5rem 0 0.5rem 0;">
-    <a href="/Resume.pdf" target="_blank" class="pdf-link">
-      📄 View full resume (PDF)
+
+  <!-- PDF 占位链接 (可选上传简历文件) -->
+  <div style="margin-bottom: 1.2rem;">
+    <a href="/Resume_OceanOu.pdf" class="pdf-link" target="_blank">
+      📄 完整简历 PDF (学术版)
     </a>
-    <span style="margin-left: 1rem; font-size: 0.85rem; color: #6f6f8a;">
-      (opens in new tab)
-    </span>
+    <span style="margin-left: 0.8rem; font-size: 0.75rem; color: #5b6e8c;">(更新于2026.04)</span>
+  </div>
+
+  <!-- ========= 教育背景 ========= -->
+  <h2>🎓 教育背景</h2>
+  <div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;">
+      <span style="font-weight: 650; font-size: 1.08rem;">香港科技大学（广州）</span>
+      <span class="date">2023 – 2027 (预期)</span>
+    </div>
+    <div style="font-size: 0.92rem; color: #334155;">数据科学与大数据技术 工学学士 (BEng)</div>
+    <div class="course-list">
+      <span>深度学习</span><span>自然语言处理</span><span>机器学习</span><span>云计算</span>
+      <span>数据库管理系统</span><span>算法设计与分析</span><span>离散数学</span>
+      <span>应用统计</span><span>C++编程</span>
+    </div>
+  </div>
+
+  <!-- ========= 科研经历 (Research) ========= 重点突出DPC + 链接区域 -->
+  <h2>📄 科研经历</h2>
+  
+  <!-- DPC 项目: 提供明确的链接区域（满足“添加链接的地方”） -->
+  <div class="research-item">
+    <div class="research-header">
+      <h3>DPC：基于双范式一致性的训练无关 Text-to-SQL 候选选择框架</h3>
+      <span class="date">2025.11 – 2026.01 · ACL 2026 接收</span>
+    </div>
+    <div class="project-desc">
+      针对大语言模型在Text-to-SQL任务中“生成能力强、选择能力弱”的问题，提出DPC (Dual-Paradigm Consistency)框架，将候选选择从“概率猜测”转化为“确定性验证”。采用多智能体协同方法，通过对抗性反馈循环合成「最小区分数据库(MDD)」，利用SQL与Python在执行逻辑上的互补性构建独立于模型的先验参考锚点。作为即插即用模块集成至DAIL-SQL、CHESS等SOTA系统，实现平均<span style="font-weight: 600;">1.8%</span>的准确率提升。本人作为第二作者，负责多模型多系统实验执行、案例深度分析及论文修改。
+    </div>
+    https://github.com/HKUSTDial/DPC
+    <div class="dpc-link-area">
+      <a href="#" class="link-icon" target="_blank">📄 ACL 2026 Paper (预印本)</a>
+      <a href="#" class="link-icon" target="_blank">🐙 Code / GitHub (即将开源)</a>
+      <a href="#" class="link-icon" target="_blank">🔗 项目主页 (demo)</a>
+      <span style="font-size: 0.7rem; color: #6f7e95;">※ 链接占位，可替换真实URL</span>
+    </div>
+    <div style="margin-top: 0.3rem;">
+      <span class="tech-tag">#Text-to-SQL</span>
+      <span class="tech-tag">#Multi-Agent</span>
+      <span class="tech-tag">#Dual-Paradigm</span>
+      <span class="tech-tag">#LLM</span>
+    </div>
+  </div>
+
+  <!-- Lingua-SQL -->
+  <div class="research-item">
+    <div class="research-header">
+      <h3>Lingua-SQL：多语言多方言驱动的 NL2SQL 框架</h3>
+      <span class="date">2025.04 – 2025.12</span>
+    </div>
+    <div class="project-desc">
+      基于大语言模型构建 NL2SQL 转换框架。生成阶段通过多语言及多数据库方言提示工程系统化构建多样化 SQL 候选集；选择阶段设计了基于语法树解析的一致性投票算法，利用查询结构而非执行结果进行筛选。在 Bird-dev 数据集上执行准确率相比传统 Self-Consistency 提升约 <strong>4%</strong>，验证语法结构信息在选择模块中的有效性。
+    </div>
+    <div>
+      <span class="tech-tag">#NL2SQL</span>
+      <span class="tech-tag">#Prompt Engineering</span>
+      <span class="tech-tag">#语法树投票</span>
+    </div>
+  </div>
+
+  <!-- 顺风耳: 金融信号追踪 -->
+  <div class="research-item">
+    <div class="research-header">
+      <h3>顺风耳 · AI辅助金融信号追踪系统</h3>
+      <span class="date">2026.02 – 至今</span>
+    </div>
+    <div class="project-desc">
+      参与团队深度研究项目，负责多智能体协作机制在金融舆情分析中的验证与应用。通过趋势追踪、金融分析、预测分析及报告生成智能体协同，将全网新闻转化为结构化投资逻辑传导链，并集成新闻感知时序预测模型实现股价冲击量化。
+    </div>
+    <div>
+      <span class="tech-tag">#Multi-Agent</span>
+      <span class="tech-tag">#FinTech</span>
+      <span class="tech-tag">#时序预测</span>
+    </div>
+  </div>
+
+  <!-- ========= 项目经历 (独立项目实战) ========= -->
+  <h2>⚙️ 项目经历</h2>
+
+  <!-- 大模型自对齐优化系统 -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>大模型自对齐优化系统 · 指令反演与质量自筛选闭环</h3>
+      <span class="date">2025.12</span>
+    </div>
+    <div class="project-desc">
+      复现自对齐方法：利用LoRA对 qwen2.5-3B-Instruct 进行参数高效微调，在 openassistant-guanaco 数据集上训练反向模型（response → instruction），仅训练0.2%参数量完成微调。从 LIMA 数据集采样回答，通过反向模型生成伪指令，构建(指令,回答)候选对；使用基座模型作为评判器+ few-shot 质量评分(1-5分)，筛选高质量子集再次LoRA微调。全流程无人工标注，显著提升基座模型响应质量。
+    </div>
+    <div><span class="tech-tag">#LoRA</span><span class="tech-tag">#Self-Alignment</span><span class="tech-tag">#LLM</span></div>
+  </div>
+
+  <!-- 数据科学课程项目：AnkiDroid + 学习行为分析 + 云端推理 -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>AnkiDroid 个性化学习报告系统 · 全栈数据闭环</h3>
+      <span class="date">2025.09 – 2025.12</span>
+    </div>
+    <div class="project-desc">
+      为开源项目AnkiDroid贡献“选择题模式”与“学习报告”模块。设计用户行为采集模块，收集卡片评分、学习间隔、状态时长等多维数据，通过JSON序列化上传后端。使用Flask构建GBM模型推理REST API，部署至云服务器；设计特征工程流水线提取 memory_strength、review_interval、cognitive_load 等关键特征。前端动态调取推理结果，实现从行为采集→特征工程→远程推理→个性化建议生成的完整闭环。支持动态端点配置及本地调试。
+    </div>
+    <div><span class="tech-tag">#Flask</span><span class="tech-tag">#GBM</span><span class="tech-tag">#CI/CD (GitHub Actions)</span><span class="tech-tag">#Firebase</span></div>
+  </div>
+
+  <!-- 校园活动登记系统 -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>校园活动登记和管理系统 · 后端核心架构</h3>
+      <span class="date">2025.04 – 2025.06</span>
+    </div>
+    <div class="project-desc">
+      独立完成数据访问层与业务逻辑层全流程设计与实现，保证活动生命周期处理（创建、审批、签到、归档）的高效稳定。作为项目报告主要撰写人，系统梳理后端架构与数据库设计。
+    </div>
+    <div><span class="tech-tag">#后端开发</span><span class="tech-tag">#数据库设计</span><span class="tech-tag">#业务逻辑</span></div>
+  </div>
+
+  <!-- 额外补充 Transformer/ GPT 个人实现 (出于技能证明) 但不单独占项目太多，但可用一小块亮点，或者整合到技能里，已经体现过 -->
+  
+  <!-- ========= 活动与领导力 ========= -->
+  <h2>🎻 活动与领导力</h2>
+  
+  <div class="activity-item">
+    <div class="project-header">
+      <h3>港科广民乐社 · 社长</h3>
+      <span class="date">2025.08 – 至今</span>
+    </div>
+    <div class="project-desc">统筹招新与日常排练，独立策划并举办专场音乐会，负责场地协调、节目编排及全流程宣传，推动校内外民乐交流。</div>
   </div>
   
-  <!-- ===== EDUCATION ===== -->
-  <h2>🎓 Education</h2>
-  <div class="education-meta">
-    <div class="edu-line">
-      <span class="institution">The Hong Kong University of Science and Technology (Guangzhou)</span>
-      <span class="date">2023 – 2027 (expected)</span>
-    </div>
-    <div><span style="font-size:0.92rem; color:#2d2d4a;">B.Eng. in Data Science and Big Data Technology</span></div>
-    <div class="course-list">
-      <span>Deep Learning</span><span>NLP</span><span>Machine Learning</span><span>Cloud Computing</span>
-      <span>DBMS</span><span>Algorithm Design</span><span>Discrete Math</span><span>Applied Statistics</span>
-      <span>C++</span>
-    </div>
-  </div>
-
-  <!-- ===== PROJECTS ===== (most relevant first) -->
-  <h2>📌 Projects</h2>
-
-  <!-- NL2SQL -->
-  <div class="project-item">
+  <div class="activity-item">
     <div class="project-header">
-      <h3>NL2SQL · text-to-SQL framework</h3>
-      <span class="date">Apr 2025 – Dec 2025</span>
+      <h3>HKUST(GZ) PLACE夏令营 · 助教</h3>
+      <span class="date">2024 & 2025 夏季</span>
     </div>
-    <div class="project-desc">
-      Built an NL2SQL conversion framework on top of open-source LLMs. Used multilingual prompting to support multiple SQL dialects. Designed a grammar‑tree based selection algorithm, improving execution accuracy by ~4%.
-    </div>
+    <div class="project-desc">协助破冰及团队活动设计，引导国际学生融入校园文化，高效处理现场突发状况，强化跨文化沟通能力。</div>
   </div>
-
-  <!-- Data science course project (AnkiDroid) -->
-  <div class="project-item">
+  
+  <div class="activity-item">
     <div class="project-header">
-      <h3>AnkiDroid · personalized learning report</h3>
-      <span class="date">Sep 2025 – Dec 2025</span>
+      <h3>第十五届全国运动会 · 开幕式志愿者</h3>
+      <span class="date">2025.11</span>
     </div>
-    <div class="project-desc">
-      Contributed to the open‑source AnkiDroid project: developed a personalized learning report feature. Handled user data collection and modeling, adopted GitHub Workflow for agile development and automated deployment.
-    </div>
+    <div class="project-desc">参与国家级赛事开幕式志愿服务，保障现场流程顺利，锻炼大型活动协作与应变能力。</div>
   </div>
-
-  <!-- Campus event system -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>Campus Activity Registration & Management</h3>
-      <span class="date">Apr 2025 – Jun 2025</span>
-    </div>
-    <div class="project-desc">
-      Independently designed and implemented the data access and business logic layers (backend). Ensured efficient handling of full activity lifecycle. Main author of the project report.
-    </div>
-  </div>
-
-  <!-- LLM self-alignment (instruction inversion) -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>LLM self‑alignment via instruction inversion & filtering</h3>
-      <span class="date">Dec 2025</span>
-    </div>
-    <div class="project-desc">
-      Reproduced a self‑alignment pipeline: fine‑tuned a “response → instruction” reverse model with LoRA to generate synthetic data, added LLM‑based quality filtering to build high‑quality instruction set, then fine‑tuned the base LLM, forming a closed optimization loop.
-    </div>
-  </div>
-
-  <!-- climate change & power outage -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>Power outage risk under climate & energy transition</h3>
-      <span class="date">Jun 2024 – Sep 2024</span>
-    </div>
-    <div class="project-desc">
-      Integrated global renewable energy and climate datasets, applied regression models to project future spatial distribution of power outage risks.
-    </div>
-  </div>
-
-  <!-- ===== ACTIVITIES & LEADERSHIP ===== -->
-  <h2>🎻 Activities & Leadership</h2>
-
-  <!-- 民乐社社长 -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>President · HKUST(GZ) Traditional Chinese Music Club</h3>
-      <span class="date">Aug 2025 – present</span>
-    </div>
-    <div class="project-desc">
-      Plan and lead recruitment, weekly rehearsals. Solely organized a special concert: venue coordination, program curation, and full promotional process.
-    </div>
-  </div>
-
-  <!-- PLACE summer camp TA -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>Teaching Assistant · PLACE Summer Camp (HKUST-GZ)</h3>
-      <span class="date">Summer 2024 & 2025</span>
-    </div>
-    <div class="project-desc">
-      Assisted in ice‑breaking activities and team building; facilitated integration for international students, handled on‑site emergencies.
-    </div>
-  </div>
-
-  <!-- 15th National Games volunteer -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>Opening Ceremony Volunteer · 15th National Games (China)</h3>
-      <span class="date">Nov 2025</span>
-    </div>
-    <div class="project-desc">
-      Volunteered at the opening ceremony of the 2025 National Games.
-    </div>
-  </div>
-
-  <!-- ===== HONORS & AWARDS ===== -->
-  <h2>🏅 Honors & Awards</h2>
+  
+  <!-- ========= 荣誉 & 获奖 ========= -->
+  <h2>🏅 荣誉与奖学金</h2>
   <div class="honor-grid">
-    <div class="honor-item"><span class="honor-badge"></span>2025 Hong Kong, Macau, Taiwan Second‑Class Scholarship</div>
-    <div class="honor-item"><span class="honor-badge"></span>4th University Electrical & Electronic Engineering Innovation Contest – Provincial Third Prize</div>
-    <div class="honor-item"><span class="honor-badge"></span>2024 HKUST(GZ) Undergraduate Research Project – Merit Research Award</div>
-    <div class="honor-item"><span class="honor-badge"></span>HKUST(GZ) First‑Class Scholarship</div>
+    <div class="honor-item"><span class="honor-badge"></span>港澳台侨二等奖学金 (2025)</div>
+    <div class="honor-item"><span class="honor-badge"></span>第四届高校电气电子工程创新大赛 省赛三等奖</div>
+    <div class="honor-item"><span class="honor-badge"></span>香港科技大学(广州) 本科生科研项目优秀奖 (2024)</div>
+    <div class="honor-item"><span class="honor-badge"></span>香港科技大学(广州) 一等奖学金</div>
+    <div class="honor-item"><span class="honor-badge"></span>ACL 2026 (第二作者) 顶级会议论文录用</div>
+    <div class="honor-item"><span class="honor-badge"></span>HKUST(GZ) 数据科学竞赛 最佳创新应用提名</div>
   </div>
-
-  <!-- ===== SKILLS & TECH ===== (formatted as tags) -->
-  <h2>⚙️ Technical Proficiencies</h2>
+  
+  <!-- ========= 技能特长 ========= -->
+  <h2>🔧 技术栈 & 核心能力</h2>
   <ul class="skill-list">
-    <li>Python</li><li>SQL</li><li>C++ (basic)</li><li>VibeCoding (Cursor/Copilot)</li>
-    <li>Transformer (Multi‑Head Attention, Pos. Encoding)</li><li>PyTorch (GPT experiments)</li>
-    <li>RAG (Retrieval‑Augmented Generation)</li><li>Linux environment</li>
-    <li>Cloud deployment / DevOps</li>
+    <li>Python / SQL</li><li>C++ (基础)</li><li>VibeCoding (Cursor / Copilot)</li>
+    <li>PyTorch (GPT实验)</li><li>Transformer 手写实现(MHA, PE)</li><li>RAG 检索增强生成</li>
+    <li>Linux / 云部署 (Cloud Run, Flask)</li><li>LoRA/微调</li><li>Git/GitHub CI/CD</li>
   </ul>
-
-  <!-- additional line: open source / vibe coding -->
-  <div style="font-size:0.88rem; margin-top:1rem; color:#2d2d42;">
-    ⚡ <span style="background:#edf1f9; padding:0.1rem 0.6rem; border-radius:20px;">LoRA · GPT · RAG</span> 
-    <span style="margin-left:0.6rem;">🔥 experienced in fast prototyping with Cursor & Copilot</span>
+  <div style="font-size: 0.88rem; margin-top: 0.2rem; color: #2c3e50; background: #F8FAFE; padding: 0.4rem 0.8rem; border-radius: 20px;">
+    📌 深入理解大语言模型推理及对齐技术 · 熟悉多智能体协作范式 · 具备完整数据工程项目落地经验（采集 → 特征工程 → 部署）
   </div>
-
-  <!-- minimalist footer with github + email -->
+  
+  <!-- 额外补充：研究兴趣小卡片 -->
+  <div style="margin-top: 1.3rem; background: #F9FBFE; border-radius: 24px; padding: 0.7rem 1rem; border: 1px solid #ecf3fa;">
+    <span style="font-weight: 550;">📖 研究兴趣：</span> Text-to-SQL · 大模型对齐 · 多智能体系统 · 金融AI · 代码智能
+  </div>
+  
+  <!-- 页脚 附带GitHub / email -->
   <div class="footnote">
-    <span>✨ minimalist CV – built as a single‑page web resume</span>
-    <span><a href="https://github.com/oukunhei" target="_blank">github/oukunhei</a> · okhou533@connect.hkust-gz.edu.cn</span>
+    <span>✨ 基于最新简历更新 · 欧韵曦 | 数据科学本科 2027</span>
+    <span><a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a> · <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
   </div>
-
-  <!-- tiny note: fully english, based on personal resume -->
+  
+  <!-- 在最底部标注DPC链接可编辑说明 (隐性满足需求) -->
+  <div style="text-align: right; font-size: 0.7rem; margin-top: 0.8rem; color: #93a5c0;">
+    * DPC 项目中的链接区域支持自定义，点击即可替换为真实论文/代码地址。
+  </div>
 </div>
-<!-- container end -->
 </body>
 </html>
