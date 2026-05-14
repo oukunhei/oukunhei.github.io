@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ou Ocean Kun Hei · Data Science · HKUST(GZ)</title>
+  <style>
+    /* ——— RESET & GLOBAL ——— */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #1a1e2b;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+      padding: 2.4rem 2.2rem;
+      transition: all 0.2s;
+    }
+
+    /* ——— TYPOGRAPHY ——— */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 620;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      color: #0b1120;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #475569;
+      border-bottom: 1px solid #e9edf2;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.2px;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.06rem;
+      font-weight: 620;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .date {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.75rem;
+      font-weight: 450;
+      color: #5b6e8c;
+      white-space: nowrap;
+      background: #f1f5f9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      letter-spacing: -0.2px;
+    }
+
+    /* ——— CONTACT & TOP ——— */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin: 0.5rem 0 1rem 0;
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+
+    .contact-row a {
+      color: #1e2f44;
+      text-decoration: none;
+      border-bottom: 1px dotted #94a3b8;
+      font-weight: 470;
+    }
+
+    .contact-row a:hover {
+      border-bottom: 1px solid #0f172a;
+      color: #000;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2ff;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1e40af;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .lang-switch:hover {
+      background: #e0e7ff;
+    }
+
+    .pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1e293b;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .pdf-link:hover {
+      background: #e2e8f0;
+    }
+
+    /* ——— RESEARCH/PROJECT CARDS ——— */
+    .research-item, .project-item, .activity-item {
+      margin-bottom: 1.7rem;
+    }
+
+    .research-header, .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: #2c3a4b;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+      padding-right: 0.2rem;
+    }
+
+    .project-desc ul {
+      margin-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .project-desc li {
+      margin-bottom: 0.3rem;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e40af;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 24px;
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+      font-weight: 470;
+    }
+
+    .link-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      background: #f1f4f9;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #2c3e66;
+      font-weight: 480;
+      transition: 0.15s;
+    }
+
+    .link-icon:hover {
+      background: #e4e9f2;
+      color: #0f172a;
+    }
+
+    /* skills grid */
+    ul.skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.9rem;
+      list-style: none;
+      margin: 0.8rem 0 0.4rem;
+    }
+
+    ul.skill-list li {
+      background-color: #f0f4fa;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 470;
+      color: #1e2a3e;
+    }
+
+    .honor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.55rem 1.2rem;
+      margin: 0.8rem 0 0.5rem;
+    }
+
+    .honor-item {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .honor-badge {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #5b6e8c;
+      border-radius: 2px;
+      margin-right: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 0.5rem;
+    }
+
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .course-list span {
+      background: #f1f5f9;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #2c3e5c;
+    }
+
+    .footnote {
+      border-top: 1px solid #e9edf2;
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #5b6e8c;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footnote a {
+      color: #2c3e66;
+      text-decoration: none;
+      border-bottom: 1px dotted #b9c3d4;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* emphasis for DPC links */
+    .dpc-link-area {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        padding: 1.6rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .date {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <h1>Ou Ocean Kun Hei</h1>
+  <div class="subhead">
+    <span>BSc in Data Science and Big Data Technology · HKUST(Guangzhou)</span>
+    <span style="font-weight: 450;">CGPA: 3.362/4.4</span>
+  </div>
+
+  <div class="contact-row">
+    <span>📧 <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
+    <span>🐙 <a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a></span>
+    <span>📱 +86 15112134690</span>
+    <a href="../zh/index.html" class="lang-switch">🇨🇳 中文</a>
+  </div>
+
+  <!-- ========= Education ========= -->
+  <h2>🎓 Education</h2>
+  <div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;">
+      <span style="font-weight: 650; font-size: 1.08rem;">Hong Kong University of Science and Technology (Guangzhou)</span>
+      <span class="date">2023 – Present</span>
+    </div>
+    <div style="font-size: 0.92rem; color: #334155;">BSc in Data Science and Big Data Technology (Expected May 2027)</div>
+    <div class="course-list">
+      <span>Deep Learning</span><span>NLP &amp; Knowledge Engineering</span><span>Machine Learning</span>
+      <span>Database Management Systems</span><span>Discrete Mathematics</span><span>Applied Statistics</span>
+    </div>
+  </div>
+
+  <!-- ========= Project Experience ========= -->
+  <h2>📄 Project Experience</h2>
+
+  <!-- DPC -->
+  <div class="research-item">
+    <div class="research-header">
+      <h3>DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency (ACL 2026)</h3>
+      <span class="date">2025.11 – 2026.01</span>
+    </div>
+    <div class="project-desc">
+      Addressed the issue that large language models exhibit "strong generation ability but weak selection ability" in Text-to-SQL tasks. Proposed the DPC (Dual-Paradigm Consistency) framework, using a multi-agent collaborative approach with an adversarial feedback loop to synthesize Minimal Distinguishing Databases (MDD), and leveraging the complementarity of SQL and Python in execution logic to construct model-independent prior reference anchors. As a plug-and-play module, integrated into state-of-the-art systems such as DAIL-SQL and CHESS, achieving an average accuracy improvement of <strong>1.8%</strong>.
+      <br><br>
+      As the second author, primarily responsible for conducting experiments across multiple models and systems, performing in-depth analysis of typical cases, and participating in paper revision and writing. The work has been accepted by ACL 2026.
+    </div>
+  </div>
+
+  <!-- LinguaSQL -->
+  <div class="research-item">
+    <div class="research-header">
+      <h3>LinguaSQL: Unlocking NL2SQL Potential Through Multilingual and Multi-Dialect Prompting</h3>
+      <span class="date">2025.04 – 2025.12</span>
+    </div>
+    <div class="project-desc">
+      Developed a framework for generating candidate SQL queries with prompts in different natural languages and database dialects. Explored a selection strategy based on AST and gained approximately a <strong>4%</strong> improvement in accuracy.
+    </div>
+  </div>
+
+  <!-- Self-Alignment -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Large Model Self-Alignment Optimization System</h3>
+      <span class="date">2025.12</span>
+    </div>
+    <div class="project-desc">
+      Reproduced the core process of the self-alignment paper, constructed a reverse model of "answer → instruction" through LoRA fine-tuning to generate synthetic data. Formed a complete optimization closed loop from data synthesis and quality evaluation to model iteration.
+    </div>
+  </div>
+
+  <!-- Data Science Project (AnkiDroid) -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Data Science Project — AnkiDroid Personalized Study Report</h3>
+      <span class="date">2025.09 – 2025.12</span>
+    </div>
+    <div class="project-desc">
+      Developed a personalized study-report feature in the AnkiDroid open-source project, deploying a machine learning model via Flask. Implemented agile development and automated deployment using GitHub Workflow.
+    </div>
+  </div>
+
+  <!-- Campus Activities System -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Campus Activities Registration and Management System</h3>
+      <span class="date">2025.04 – 2025.05</span>
+    </div>
+    <div class="project-desc">
+      Responsible for core backend development, independently completed the design and implementation of the entire data access layer and business logic layer, ensuring the efficiency and stability of key operations such as activity lifecycle management.
+    </div>
+  </div>
+
+  <!-- Power Outages -->
+  <div class="project-item">
+    <div class="project-header">
+      <h3>Exploring Power Outages in the Context of Climate Change and Energy Transition</h3>
+      <span class="date">2024.06 – 2024.09</span>
+    </div>
+    <div class="project-desc">
+      Developed a climate-energy resilience model by analyzing global renewable energy and climate datasets in R, utilizing regression analysis to quantify future power outage risks under climate change scenarios.
+    </div>
+  </div>
+
+  <!-- ========= Volunteer Activities ========= -->
+  <h2>🤝 Volunteer Activities</h2>
+
+  <div class="activity-item">
+    <div class="project-header">
+      <h3>PLACE Summer Camp, HKUST(GZ)</h3>
+      <span class="date">2024, 2025</span>
+    </div>
+  </div>
+
+  <div class="activity-item">
+    <div class="project-header">
+      <h3>15th National Games of the People's Republic of China</h3>
+      <span class="date">2025.11</span>
+    </div>
+  </div>
+
+  <!-- ========= Honors & Awards ========= -->
+  <h2>🏅 Honors &amp; Awards</h2>
+  <div class="honor-grid">
+    <div class="honor-item"><span class="honor-badge"></span>Second-class Scholarship for Hong Kong, Macao, and Overseas Chinese Students (2025)</div>
+    <div class="honor-item"><span class="honor-badge"></span>Mirit Research Award of Undergraduate Research Program (2024)</div>
+    <div class="honor-item"><span class="honor-badge"></span>HKUST(GZ) First Class Scholarship (2023)</div>
+  </div>
+
+  <!-- ========= Skills and Interests ========= -->
+  <h2>🔧 Skills and Interests</h2>
+  <ul class="skill-list">
+    <li>Python</li><li>SQL</li><li>C++</li><li>PyTorch</li>
+    <li>English</li><li>Mandarin</li><li>Cantonese</li>
+  </ul>
+  <div style="font-size: 0.88rem; margin-top: 0.2rem; color: #2c3e50; background: #F8FAFE; padding: 0.4rem 0.8rem; border-radius: 20px;">
+    📌 Areas of Interest: Data Engineering · Retrieval Augmented Generation (RAG) · NL2SQL
+  </div>
+
+  <div class="footnote">
+    <span><a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a> · <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
+    <span>Last updated: May 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
