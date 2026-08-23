@@ -3,468 +3,408 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>欧韵曦 · 数据科学 · 香港科技大学（广州）</title>
+  <meta name="description" content="香港科技大学（广州）数据科学本科生欧韵曦的学术主页。">
+  <title>欧韵曦 | 数据科学</title>
   <style>
-    /* ——— RESET & GLOBAL ——— */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --ink: #172033;
+      --muted: #5d687a;
+      --accent: #244a78;
+      --accent-soft: #eef4fa;
+      --line: #dfe5ec;
+      --surface: #ffffff;
+      --canvas: #f3f5f8;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: #f7f9fc;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #1a1e2b;
-      line-height: 1.5;
-      padding: 2rem 1rem;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.72;
+      padding: 32px 18px;
+      -webkit-font-smoothing: antialiased;
     }
+
+    a { color: inherit; }
 
     .container {
-      max-width: 960px;
+      width: min(100%, 980px);
       margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
-      padding: 2.4rem 2.2rem;
-      transition: all 0.2s;
+      padding: 56px 64px 40px;
+      background: var(--surface);
+      border: 1px solid #e5e9ef;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(28, 39, 55, 0.07);
     }
 
-    /* ——— TYPOGRAPHY ——— */
+    .profile-header { padding-bottom: 28px; }
+
     h1 {
-      font-size: 2.4rem;
-      font-weight: 620;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 0.2rem;
-      color: #0b1120;
+      color: #111827;
+      font-size: clamp(2rem, 5vw, 2.65rem);
+      font-weight: 720;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
     }
 
     .subhead {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #475569;
-      border-bottom: 1px solid #e9edf2;
-      padding-bottom: 1.2rem;
-      margin-bottom: 1.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-end;
+      gap: 8px 24px;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    h2 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 0.9rem;
-      letter-spacing: -0.2px;
-      border-bottom: 1.5px solid #e2e8f0;
-      padding-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .gpa { color: #344054; font-weight: 600; white-space: nowrap; }
 
-    h3 {
-      font-size: 1.06rem;
-      font-weight: 620;
-      margin-bottom: 0.2rem;
-      color: #0f172a;
-    }
-
-    .date {
-      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-      font-size: 0.75rem;
-      font-weight: 450;
-      color: #5b6e8c;
-      white-space: nowrap;
-      background: #f1f5f9;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      letter-spacing: -0.2px;
-    }
-
-    /* ——— CONTACT & TOP ——— */
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem 2rem;
-      margin: 0.5rem 0 1rem 0;
-      font-size: 0.9rem;
-      color: #1e293b;
-    }
-
-    .contact-row a {
-      color: #1e2f44;
-      text-decoration: none;
-      border-bottom: 1px dotted #94a3b8;
-      font-weight: 470;
-    }
-
-    .contact-row a:hover {
-      border-bottom: 1px solid #0f172a;
-      color: #000;
-    }
-
-    .pdf-link {
-      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: #f1f5f9;
-      padding: 0.3rem 1rem;
-      border-radius: 60px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #1e293b;
-      text-decoration: none;
-      transition: 0.2s;
+      gap: 8px 22px;
+      margin-top: 21px;
+      font-size: 0.88rem;
     }
 
-    .pdf-link:hover {
-      background: #e2e8f0;
+    .contact-row a:not(.lang-switch) {
+      color: #344054;
+      text-decoration-color: #aab4c2;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .contact-label {
+      margin-right: 6px;
+      color: #7a8494;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
     }
 
     .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #eef2ff;
-      padding: 0.3rem 1rem;
-      border-radius: 60px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #1e40af;
+      margin-left: auto;
+      padding: 5px 12px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 650;
       text-decoration: none;
-      transition: 0.2s;
     }
 
-    .lang-switch:hover {
-      background: #e0e7ff;
+    main > section { padding: 31px 0 8px; border-top: 1px solid var(--line); }
+
+    h2 {
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      line-height: 1.4;
     }
 
-    /* ——— RESEARCH/PROJECT CARDS ——— */
-    .research-item, .project-item, .activity-item {
-      margin-bottom: 1.7rem;
+    h3 {
+      color: #182132;
+      font-size: 1.02rem;
+      font-weight: 680;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
     }
 
-    .research-header, .project-header {
+    .item, .education-block { padding-bottom: 24px; }
+    .item:last-child, .education-block:last-child { padding-bottom: 9px; }
+
+    .item-header, .education-header {
       display: flex;
-      flex-wrap: wrap;
       align-items: baseline;
       justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.25rem;
+      gap: 8px 24px;
     }
 
-    .project-desc {
-      font-size: 0.92rem;
-      color: #2c3a4b;
-      margin-top: 0.4rem;
-      line-height: 1.45;
-      padding-right: 0.2rem;
+    .item-header h3 { min-width: 0; max-width: 690px; overflow-wrap: anywhere; }
+
+    .date {
+      flex: 0 0 auto;
+      color: #687386;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.015em;
+      white-space: nowrap;
     }
 
-    .tech-tag {
-      display: inline-block;
-      background: #eef2ff;
-      color: #1e40af;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.65rem;
-      border-radius: 24px;
-      margin-right: 0.5rem;
-      margin-top: 0.3rem;
-      font-weight: 470;
+    .degree { margin-top: 3px; color: #465165; font-size: 0.91rem; }
+
+    .description {
+      margin-top: 8px;
+      color: #3f4b5e;
+      font-size: 0.9rem;
+      line-height: 1.72;
+      overflow-wrap: anywhere;
     }
 
-    .link-icon {
+    .featured {
+      margin: 0 0 25px;
+      padding: 20px 22px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    .resource-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 15px; }
+
+    .resource-link {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      min-height: 32px;
+      padding: 5px 11px;
+      color: var(--accent);
+      background: #fff;
+      border: 1px solid #cbd7e4;
+      border-radius: 6px;
       font-size: 0.78rem;
-      background: #f1f4f9;
-      padding: 0.2rem 0.7rem;
-      border-radius: 40px;
+      font-weight: 650;
       text-decoration: none;
-      color: #2c3e66;
-      font-weight: 480;
-      transition: 0.15s;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
     }
 
-    .link-icon:hover {
-      background: #e4e9f2;
-      color: #0f172a;
-    }
+    .resource-link:hover { background: var(--accent-soft); border-color: #9eb2c9; }
 
-    /* skills grid */
-    ul.skill-list {
+    .course-list, .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem 0.9rem;
+      gap: 7px;
+      margin-top: 13px;
       list-style: none;
-      margin: 0.8rem 0 0.4rem;
     }
 
-    ul.skill-list li {
-      background-color: #f0f4fa;
-      padding: 0.25rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 470;
-      color: #1e2a3e;
+    .course-list span, .skill-list li {
+      padding: 4px 9px;
+      color: #435168;
+      background: #f1f4f7;
+      border-radius: 5px;
+      font-size: 0.78rem;
     }
 
     .honor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 0.55rem 1.2rem;
-      margin: 0.8rem 0 0.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px 30px;
+      padding-bottom: 8px;
     }
 
-    .honor-item {
-      font-size: 0.9rem;
-      display: flex;
-      align-items: baseline;
+    .honor-item { position: relative; padding-left: 15px; color: #3f4b5e; font-size: 0.88rem; }
+
+    .honor-item::before {
+      position: absolute;
+      top: 0.66em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #72839a;
+      border-radius: 50%;
+      content: "";
     }
 
-    .honor-badge {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background-color: #5b6e8c;
-      border-radius: 2px;
-      margin-right: 0.65rem;
-      flex-shrink: 0;
-      margin-top: 0.5rem;
+    .summary-note, .research-interests {
+      margin-top: 14px;
+      padding: 11px 13px;
+      color: #445166;
+      background: #f8fafc;
+      border: 1px solid #e7ebf0;
+      border-radius: 7px;
+      font-size: 0.86rem;
     }
 
-    .course-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.8rem;
-      margin: 0.6rem 0 0.2rem;
-    }
+    .research-interests { margin-top: 9px; }
+    .note-label { color: #26364c; font-weight: 680; }
 
-    .course-list span {
-      background: #f1f5f9;
-      padding: 0.15rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      color: #2c3e5c;
-    }
-
-    .footnote {
-      border-top: 1px solid #e9edf2;
-      margin-top: 2.2rem;
-      padding-top: 1.2rem;
-      font-size: 0.8rem;
-      color: #5b6e8c;
+    footer {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      gap: 8px 20px;
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #737e8e;
+      font-size: 0.76rem;
     }
 
-    .footnote a {
-      color: #2c3e66;
-      text-decoration: none;
-      border-bottom: 1px dotted #b9c3d4;
+    footer a { color: #536177; text-decoration-color: #aeb7c3; text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid #557aa5; outline-offset: 3px; }
+
+    @media (max-width: 680px) {
+      body { padding: 0; }
+      .container { width: 100%; max-width: 100%; padding: 36px 23px 30px; overflow-x: hidden; border: 0; border-radius: 0; box-shadow: none; }
+      .lang-switch { margin-left: 0; }
+      .item-header, .education-header { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .date { white-space: normal; }
+      .featured { width: 100%; max-width: 100%; padding: 17px; }
+      .course-list, .skill-list { width: 100%; max-width: 100%; }
+      .course-list > *, .skill-list > * { max-width: 100%; overflow-wrap: anywhere; }
+      .honor-grid { grid-template-columns: 1fr; }
     }
 
-    a {
-      text-decoration: none;
-    }
-
-    /* emphasis for DPC links */
-    .dpc-link-area {
-      margin-top: 0.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-    }
-
-    @media (max-width: 580px) {
-      .container {
-        padding: 1.6rem;
-      }
-      h1 {
-        font-size: 1.9rem;
-      }
-      .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .date {
-        white-space: normal;
-      }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .container { width: 100%; padding: 0; border: 0; box-shadow: none; }
+      .lang-switch { display: none; }
     }
   </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
+    <header class="profile-header">
+      <h1>欧韵曦 <span lang="en">Ocean Kun Hei OU</span></h1>
+      <div class="subhead">
+        <span>数据科学与大数据技术 · 香港科技大学（广州）</span>
+        <span class="gpa">GPA: 3.362/4.3</span>
+      </div>
+      <div class="contact-row">
+        <span><span class="contact-label">Email</span><a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
+        <span><span class="contact-label">GitHub</span><a href="https://github.com/oukunhei" target="_blank" rel="noopener noreferrer">github.com/oukunhei</a></span>
+        <a href="../en/index.html" class="lang-switch" lang="en">English</a>
+      </div>
+    </header>
 
-  <!-- 头部信息 -->
-  <h1>欧韵曦 Ocean Kun Hei OU</h1>
-  <div class="subhead">
-    <span>数据科学与大数据技术 · 香港科技大学（广州）</span>
-    <span style="font-weight: 450;">GPA: 3.362/4.3</span>
-  </div>
+    <main>
+      <section aria-labelledby="education-title">
+        <h2 id="education-title">教育背景</h2>
+        <div class="education-block">
+          <div class="education-header">
+            <h3>香港科技大学（广州）</h3>
+            <span class="date">2023 – 2027（预期）</span>
+          </div>
+          <div class="degree">数据科学与大数据技术</div>
+          <div class="course-list" aria-label="相关课程">
+            <span>深度学习</span><span>自然语言处理</span><span>机器学习</span><span>云计算</span>
+            <span>数据库管理系统</span><span>算法设计与分析</span><span>离散数学</span>
+            <span>应用统计</span><span>C++ 编程</span>
+          </div>
+        </div>
+      </section>
 
-  <div class="contact-row">
-    <span>📧 <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
-    <span>🐙 <a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a></span>
-    <a href="../en/index.html" class="lang-switch">🇺🇸 English</a>
-  </div>
+      <section aria-labelledby="research-title">
+        <h2 id="research-title">科研经历</h2>
+        <article class="item featured">
+          <div class="item-header">
+            <h3>DPC：基于双范式一致性的训练无关 Text-to-SQL 候选选择框架</h3>
+            <span class="date">2025.11 – 2026.01 · ACL 2026 Main</span>
+          </div>
+          <p class="description">
+            针对大语言模型在 Text-to-SQL 任务中“生成能力强、选择能力弱”的问题，提出 DPC（Dual-Paradigm Consistency）框架，将候选选择从“概率猜测”转化为“确定性验证”。采用多智能体协同方法，通过对抗性反馈循环合成「最小区分数据库（MDD）」，利用 SQL 与 Python 在执行逻辑上的互补性构建独立于模型的先验参考锚点。作为即插即用模块集成至 DAIL-SQL、CHESS 等 SOTA 系统，实现平均 <strong>1.8%</strong> 的准确率提升。本人作为第二作者，负责多模型多系统实验执行、案例深度分析及论文修改。
+          </p>
+          <div class="resource-links" aria-label="DPC 相关资源">
+            <a href="https://aclanthology.org/2026.acl-long.313/" class="resource-link" target="_blank" rel="noopener noreferrer">阅读论文</a>
+            <a href="https://github.com/HKUSTDial/DPC" class="resource-link" target="_blank" rel="noopener noreferrer">GitHub 开源代码</a>
+          </div>
+        </article>
 
-  <!-- ========= 教育背景 ========= -->
-  <h2>🎓 教育背景</h2>
-  <div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;">
-      <span style="font-weight: 650; font-size: 1.08rem;">香港科技大学（广州）</span>
-      <span class="date">2023 – 2027 (预期)</span>
-    </div>
-    <div style="font-size: 0.92rem; color: #334155;">数据科学与大数据技术</div>
-    <div class="course-list">
-      <span>深度学习</span><span>自然语言处理</span><span>机器学习</span><span>云计算</span>
-      <span>数据库管理系统</span><span>算法设计与分析</span><span>离散数学</span>
-      <span>应用统计</span><span>C++编程</span>
-    </div>
-  </div>
+        <article class="item">
+          <div class="item-header">
+            <h3>Lingua-SQL：多语言多方言驱动的 NL2SQL 框架</h3>
+            <span class="date">2025.04 – 2025.12</span>
+          </div>
+          <p class="description">
+            基于大语言模型构建 NL2SQL 转换框架。生成阶段通过多语言及多数据库方言提示工程系统化构建多样化 SQL 候选集；选择阶段设计了基于语法树解析的一致性投票算法，利用查询结构而非执行结果进行筛选。在 BIRD-dev 数据集上执行准确率相比传统 Self-Consistency 提升约 <strong>4%</strong>，验证语法结构信息在选择模块中的有效性。
+          </p>
+        </article>
+      </section>
 
-  <!-- ========= 科研经历 (Research) ========= 重点突出DPC + 链接区域 -->
-  <h2>📄 科研经历</h2>
-  
-  <!-- DPC 项目: 提供明确的链接区域（满足“添加链接的地方”） -->
-  <div class="research-item">
-    <div class="research-header">
-      <h3>DPC：基于双范式一致性的训练无关 Text-to-SQL 候选选择框架</h3>
-      <span class="date">2025.11 – 2026.01 · ACL 2026 main conference</span>
-    </div>
-    <div class="project-desc">
-      针对大语言模型在Text-to-SQL任务中“生成能力强、选择能力弱”的问题，提出DPC (Dual-Paradigm Consistency)框架，将候选选择从“概率猜测”转化为“确定性验证”。采用多智能体协同方法，通过对抗性反馈循环合成「最小区分数据库(MDD)」，利用SQL与Python在执行逻辑上的互补性构建独立于模型的先验参考锚点。作为即插即用模块集成至DAIL-SQL、CHESS等SOTA系统，实现平均<span style="font-weight: 600;">1.8%</span>的准确率提升。本人作为第二作者，负责多模型多系统实验执行、案例深度分析及论文修改。
-      <a href="#" class="link-icon" target="_blank">🐙 Code / GitHub (已开源)</a>
-      <a href="#" class="link-icon" target="_blank">🔗 项目主页 (demo)</a>
-      <span style="font-size: 0.7rem; color: #6f7e95;">https://github.com/HKUSTDial/DPC</span>
-    </div>
-  </div>
+      <section aria-labelledby="projects-title">
+        <h2 id="projects-title">项目经历</h2>
+        <article class="item">
+          <div class="item-header">
+            <h3>大模型自对齐优化系统 · 指令反演与质量自筛选闭环</h3>
+            <span class="date">2025.12</span>
+          </div>
+          <p class="description">
+            复现自对齐方法：利用 LoRA 对 Qwen2.5-3B-Instruct 进行参数高效微调，在 OpenAssistant-Guanaco 数据集上训练反向模型（response → instruction），仅训练 0.2% 参数量完成微调。从 LIMA 数据集采样回答，通过反向模型生成伪指令，构建（指令，回答）候选对；使用基座模型作为评判器并进行 few-shot 质量评分（1–5 分），筛选高质量子集再次 LoRA 微调。全流程无人工标注，显著提升基座模型响应质量。
+          </p>
+        </article>
 
-  <!-- Lingua-SQL -->
-  <div class="research-item">
-    <div class="research-header">
-      <h3>Lingua-SQL：多语言多方言驱动的 NL2SQL 框架</h3>
-      <span class="date">2025.04 – 2025.12</span>
-    </div>
-    <div class="project-desc">
-      基于大语言模型构建 NL2SQL 转换框架。生成阶段通过多语言及多数据库方言提示工程系统化构建多样化 SQL 候选集；选择阶段设计了基于语法树解析的一致性投票算法，利用查询结构而非执行结果进行筛选。在 Bird-dev 数据集上执行准确率相比传统 Self-Consistency 提升约 <strong>4%</strong>，验证语法结构信息在选择模块中的有效性。
-    </div>
-  </div>
+        <article class="item">
+          <div class="item-header">
+            <h3>AnkiDroid 个性化学习报告系统 · 全栈数据闭环</h3>
+            <span class="date">2025.09 – 2025.12</span>
+          </div>
+          <p class="description">
+            为开源项目 AnkiDroid 贡献“选择题模式”与“学习报告”模块。设计用户行为采集模块，收集卡片评分、学习间隔、状态时长等多维数据，通过 JSON 序列化上传后端。使用 Flask 构建 GBM 模型推理 REST API，部署至云服务器；设计特征工程流水线提取 <em>memory_strength</em>、<em>review_interval</em>、<em>cognitive_load</em> 等关键特征。前端动态调取推理结果，实现从行为采集、特征工程、远程推理到个性化建议生成的完整闭环，并支持动态端点配置及本地调试。
+          </p>
+        </article>
 
-  <!-- 顺风耳: 金融信号追踪 -->
-  <div class="research-item">
-    <div class="research-header">
-      <h3>顺风耳 · AI辅助金融信号追踪系统</h3>
-      <span class="date">2026.02 – 至今</span>
-    </div>
-    <div class="project-desc">
-      参与团队深度研究项目，负责多智能体协作机制在金融舆情分析中的验证与应用。通过趋势追踪、金融分析、预测分析及报告生成智能体协同，将全网新闻转化为结构化投资逻辑传导链，并集成新闻感知时序预测模型实现股价冲击量化。
-    </div>
-  </div>
+        <article class="item">
+          <div class="item-header">
+            <h3>校园活动登记和管理系统 · 后端核心架构</h3>
+            <span class="date">2025.04 – 2025.06</span>
+          </div>
+          <p class="description">
+            独立完成数据访问层与业务逻辑层全流程设计与实现，保证活动生命周期处理（创建、审批、签到、归档）的高效稳定。作为项目报告主要撰写人，系统梳理后端架构与数据库设计。
+          </p>
+        </article>
+      </section>
 
-  <!-- ========= 项目经历 (独立项目实战) ========= -->
-  <h2>⚙️ 项目经历</h2>
+      <section aria-labelledby="leadership-title">
+        <h2 id="leadership-title">活动与领导力</h2>
+        <article class="item">
+          <div class="item-header">
+            <h3>港科广民乐社 · 社长</h3>
+            <span class="date">2025.08 – 至今</span>
+          </div>
+          <p class="description">统筹招新与日常排练，独立策划并举办专场音乐会，负责场地协调、节目编排及全流程宣传，推动校内外民乐交流。</p>
+        </article>
 
-  <!-- 大模型自对齐优化系统 -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>大模型自对齐优化系统 · 指令反演与质量自筛选闭环</h3>
-      <span class="date">2025.12</span>
-    </div>
-    <div class="project-desc">
-      复现自对齐方法：利用LoRA对 qwen2.5-3B-Instruct 进行参数高效微调，在 openassistant-guanaco 数据集上训练反向模型（response → instruction），仅训练0.2%参数量完成微调。从 LIMA 数据集采样回答，通过反向模型生成伪指令，构建(指令,回答)候选对；使用基座模型作为评判器+ few-shot 质量评分(1-5分)，筛选高质量子集再次LoRA微调。全流程无人工标注，显著提升基座模型响应质量。
-    </div>
-  </div>
+        <article class="item">
+          <div class="item-header">
+            <h3>HKUST(GZ) PLACE 夏令营 · 助教</h3>
+            <span class="date">2024 &amp; 2025 夏季</span>
+          </div>
+          <p class="description">协助破冰及团队活动设计，引导国际学生融入校园文化，高效处理现场突发状况，强化跨文化沟通能力。</p>
+        </article>
 
-  <!-- 数据科学课程项目：AnkiDroid + 学习行为分析 + 云端推理 -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>AnkiDroid 个性化学习报告系统 · 全栈数据闭环</h3>
-      <span class="date">2025.09 – 2025.12</span>
-    </div>
-    <div class="project-desc">
-      为开源项目AnkiDroid贡献“选择题模式”与“学习报告”模块。设计用户行为采集模块，收集卡片评分、学习间隔、状态时长等多维数据，通过JSON序列化上传后端。使用Flask构建GBM模型推理REST API，部署至云服务器；设计特征工程流水线提取 memory_strength、review_interval、cognitive_load 等关键特征。前端动态调取推理结果，实现从行为采集→特征工程→远程推理→个性化建议生成的完整闭环。支持动态端点配置及本地调试。
-    </div>
-  </div>
+        <article class="item">
+          <div class="item-header">
+            <h3>第十五届全国运动会 · 开幕式志愿者</h3>
+            <span class="date">2025.11</span>
+          </div>
+          <p class="description">参与国家级赛事开幕式志愿服务，保障现场流程顺利，锻炼大型活动协作与应变能力。</p>
+        </article>
+      </section>
 
-  <!-- 校园活动登记系统 -->
-  <div class="project-item">
-    <div class="project-header">
-      <h3>校园活动登记和管理系统 · 后端核心架构</h3>
-      <span class="date">2025.04 – 2025.06</span>
-    </div>
-    <div class="project-desc">
-      独立完成数据访问层与业务逻辑层全流程设计与实现，保证活动生命周期处理（创建、审批、签到、归档）的高效稳定。作为项目报告主要撰写人，系统梳理后端架构与数据库设计。
-    </div>
-  </div>
+      <section aria-labelledby="honors-title">
+        <h2 id="honors-title">荣誉与奖学金</h2>
+        <div class="honor-grid">
+          <div class="honor-item">2026 年（第 19 届）中国大学生计算机设计大赛国赛二等奖</div>
+          <div class="honor-item">港澳台侨二等奖学金（2025）</div>
+          <div class="honor-item">香港科技大学（广州）本科生科研项目优秀奖（2024）</div>
+          <div class="honor-item">香港科技大学（广州）一等奖学金（2023）</div>
+        </div>
+      </section>
 
-  
-  <!-- ========= 活动与领导力 ========= -->
-  <h2>🎻 活动与领导力</h2>
-  
-  <div class="activity-item">
-    <div class="project-header">
-      <h3>港科广民乐社 · 社长</h3>
-      <span class="date">2025.08 – 至今</span>
-    </div>
-    <div class="project-desc">统筹招新与日常排练，独立策划并举办专场音乐会，负责场地协调、节目编排及全流程宣传，推动校内外民乐交流。</div>
-  </div>
-  
-  <div class="activity-item">
-    <div class="project-header">
-      <h3>HKUST(GZ) PLACE夏令营 · 助教</h3>
-      <span class="date">2024 & 2025 夏季</span>
-    </div>
-    <div class="project-desc">协助破冰及团队活动设计，引导国际学生融入校园文化，高效处理现场突发状况，强化跨文化沟通能力。</div>
-  </div>
-  
-  <div class="activity-item">
-    <div class="project-header">
-      <h3>第十五届全国运动会 · 开幕式志愿者</h3>
-      <span class="date">2025.11</span>
-    </div>
-    <div class="project-desc">参与国家级赛事开幕式志愿服务，保障现场流程顺利，锻炼大型活动协作与应变能力。</div>
-  </div>
-  
-  <!-- ========= 荣誉 & 获奖 ========= -->
-  <h2>🏅 荣誉与奖学金</h2>
-  <div class="honor-grid">
-    <div class="honor-item"><span class="honor-badge"></span>港澳台侨二等奖学金（2025）</div>
-    <div class="honor-item"><span class="honor-badge"></span>第四届高校电气电子工程创新大赛 省赛三等奖</div>
-    <div class="honor-item"><span class="honor-badge"></span>香港科技大学（广州）本科生科研项目优秀奖 (2024)</div>
-    <div class="honor-item"><span class="honor-badge"></span>香港科技大学（广州）一等奖学金</div>
-    <div class="honor-item"><span class="honor-badge"></span>ACL 2026（第二作者）顶级会议论文录用</div>
-  </div>
-  
-  <!-- ========= 技能特长 ========= -->
-  <h2>🔧 技术栈 & 核心能力</h2>
-  <ul class="skill-list">
-    <li>Python / SQL</li><li>VibeCoding (Cursor / Copilot / Claude Code)</li>
-    <li>PyTorch (GPT实验)</li><li>Transformer 手写实现(MHA, PE)</li><li>RAG 检索增强生成</li>
-    <li>Linux / 云部署 (Cloud Run, Flask)</li><li>LoRA/微调</li><li>Git/GitHub CI/CD</li>
-  </ul>
-  <div style="font-size: 0.88rem; margin-top: 0.2rem; color: #2c3e50; background: #F8FAFE; padding: 0.4rem 0.8rem; border-radius: 20px;">
-    📌 深入理解大语言模型推理及对齐技术 · 熟悉多智能体协作范式 · 具备完整数据工程项目落地经验（采集 → 特征工程 → 部署）
-  </div>
-  
-  <!-- 额外补充：研究兴趣小卡片 -->
-  <div style="margin-top: 1.3rem; background: #F9FBFE; border-radius: 24px; padding: 0.7rem 1rem; border: 1px solid #ecf3fa;">
-    <span style="font-weight: 550;">📖 研究兴趣：</span> Text-to-SQL · 大模型对齐 · 数据智能
-  </div>
-  
-  <div class="footnote">
-    <span><a href="https://github.com/oukunhei" target="_blank">github.com/oukunhei</a> · <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
-  </div>
-  
+      <section aria-labelledby="skills-title">
+        <h2 id="skills-title">技术栈与核心能力</h2>
+        <ul class="skill-list">
+          <li>Python / SQL</li><li>AI 辅助开发（Cursor / Copilot / Claude Code）</li>
+          <li>PyTorch</li><li>Transformer 手写实现（MHA, PE）</li><li>RAG 检索增强生成</li>
+          <li>Linux / 云部署（Cloud Run, Flask）</li><li>LoRA / 微调</li><li>Git / GitHub CI/CD</li>
+        </ul>
+        <div class="summary-note">
+          深入理解大语言模型推理及对齐技术；熟悉多智能体协作范式；具备从数据采集、特征工程到部署的完整数据工程项目落地经验。
+        </div>
+        <div class="research-interests"><span class="note-label">研究兴趣：</span>Data Intelligence · Text-to-SQL · LLM Agents</div>
+      </section>
+    </main>
 
-</div>
+    <footer>
+      <span><a href="https://github.com/oukunhei" target="_blank" rel="noopener noreferrer">github.com/oukunhei</a> · <a href="mailto:okhou533@connect.hkust-gz.edu.cn">okhou533@connect.hkust-gz.edu.cn</a></span>
+    </footer>
+  </div>
 </body>
 </html>
