@@ -55,9 +55,9 @@
     .profile-image {
       display: block;
       width: 220px;
-      height: 220px;
-      object-fit: cover;
-      object-position: center;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
       border: 1px solid #d7dde5;
       border-radius: 8px;
       box-shadow: 0 8px 22px rgba(28, 39, 55, 0.08);
@@ -264,7 +264,7 @@
       .profile-header { padding-bottom: 32px; }
       .profile-grid { grid-template-columns: 1fr; gap: 24px; align-items: start; }
       .profile-image-col { order: -1; width: 100%; }
-      .profile-image { width: 180px; height: 180px; }
+      .profile-image { width: 180px; }
       .name-native { display: block; margin: 7px 0 0; font-size: 0.48em; }
       h2 { font-size: 1.28rem; }
       .item-header, .education-header { align-items: flex-start; flex-direction: column; gap: 4px; }
@@ -302,7 +302,7 @@
           </div>
         </div>
         <div class="profile-image-col">
-          <img src="../assets/1.jpg" alt="欧韵曦在 DPC 研究海报前的照片" class="profile-image" width="220" height="220" fetchpriority="high">
+          <img src="../assets/1.jpg" class="profile-image" width="2400" height="3600" fetchpriority="high">
         </div>
       </div>
     </header>
