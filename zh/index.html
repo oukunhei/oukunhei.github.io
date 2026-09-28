@@ -318,8 +318,8 @@
           <div class="degree">数据科学与大数据技术</div>
           <div class="course-list" aria-label="相关课程">
             <span>深度学习</span><span>自然语言处理</span><span>机器学习</span><span>云计算</span>
-            <span>数据库管理系统</span><span>算法设计与分析</span><span>离散数学</span>
-            <span>应用统计</span><span>C++ 编程</span>
+            <span>数据库管理系统</span><span>复杂数据管理</span><span>计算原理</span>
+            <span>算法设计与分析</span><span>C++ 编程</span>
           </div>
         </div>
       </section>
@@ -355,17 +355,17 @@
         <h2 id="projects-title">项目经历</h2>
         <article class="item">
           <div class="item-header">
-            <h3>大模型自对齐优化系统 · 指令反演与质量自筛选闭环</h3>
+            <h3>大模型自对齐优化系统</h3>
             <span class="date">2025.12</span>
           </div>
           <p class="description">
-            复现自对齐方法：利用 LoRA 对 Qwen2.5-3B-Instruct 进行参数高效微调，在 OpenAssistant-Guanaco 数据集上训练反向模型（response → instruction），仅训练 0.2% 参数量完成微调。从 LIMA 数据集采样回答，通过反向模型生成伪指令，构建（指令，回答）候选对；使用基座模型作为评判器并进行 few-shot 质量评分（1–5 分），筛选高质量子集再次 LoRA 微调。全流程无人工标注，显著提升基座模型响应质量。
+            复现指令反演与质量自筛选闭环的自对齐方法：利用 LoRA 对 Qwen2.5-3B-Instruct 进行参数高效微调，在 OpenAssistant-Guanaco 数据集上训练反向模型（response → instruction），仅训练 0.2% 参数量完成微调。从 LIMA 数据集采样回答，通过反向模型生成伪指令，构建（指令，回答）候选对；使用基座模型作为评判器并进行 few-shot 质量评分（1–5 分），筛选高质量子集再次 LoRA 微调。全流程无人工标注，显著提升基座模型响应质量。
           </p>
         </article>
 
         <article class="item">
           <div class="item-header">
-            <h3>AnkiDroid 个性化学习报告系统 · 全栈数据闭环</h3>
+            <h3>AnkiDroid 个性化学习报告系统</h3>
             <span class="date">2025.09 – 2025.12</span>
           </div>
           <p class="description">
@@ -375,11 +375,11 @@
 
         <article class="item">
           <div class="item-header">
-            <h3>校园活动登记和管理系统 · 后端核心架构</h3>
-            <span class="date">2025.04 – 2025.06</span>
+            <h3>多租户 K3s 实验平台</h3>
+            <span class="date">2026.04 – 2026.05</span>
           </div>
           <p class="description">
-            独立完成数据访问层与业务逻辑层全流程设计与实现，保证活动生命周期处理（创建、审批、签到、归档）的高效稳定。作为项目报告主要撰写人，系统梳理后端架构与数据库设计。
+            基于 K3s / Kubernetes 搭建多租户资源管理平台，设计 Namespace + RBAC 权限体系，实现Admin、Developer、Viewer 多级访问控制及租户间权限隔离；使用ResourceQuota、LimitRange、NetworkPolicy 实现计算资源与网络隔离，并编写自动化脚本完成 Namespace、ServiceAccount、RBAC、Kubeconfig 等租户环境的一键创建；基于 Flask + Kubernetes Python Client 开发 Web 管理平台，并使用 Docker Compose 完成容器化部署与完整功能验证。
           </p>
         </article>
       </section>
@@ -389,7 +389,7 @@
         <article class="item">
           <div class="item-header">
             <h3>港科广民乐社 · 社长</h3>
-            <span class="date">2025.08 – 至今</span>
+            <span class="date">2025.08 – 2026.5</span>
           </div>
           <p class="description">统筹招新与日常排练，独立策划并举办专场音乐会，负责场地协调、节目编排及全流程宣传，推动校内外民乐交流。</p>
         </article>
@@ -397,7 +397,7 @@
         <article class="item">
           <div class="item-header">
             <h3>HKUST(GZ) PLACE 夏令营 · 助教</h3>
-            <span class="date">2024 &amp; 2025 夏季</span>
+            <span class="date">2024 & 2025 夏季</span>
           </div>
           <p class="description">协助破冰及团队活动设计，引导国际学生融入校园文化，高效处理现场突发状况，强化跨文化沟通能力。</p>
         </article>

@@ -287,9 +287,9 @@
     <header class="profile-header">
       <div class="profile-grid">
         <div class="profile-info">
-          <h1>Ocean Kun Hei OU<span class="name-native" lang="zh-CN">欧韵曦</span></h1>
-          <p class="profile-role">Undergraduate Student in Data Science</p>
-          <p class="profile-institution">The Hong Kong University of Science and Technology (Guangzhou)</p>
+          <h1>OU Ocean Kun Hei<span class="name-native" lang="zh-CN">欧韵曦</span></h1>
+          <p class="profile-role">BSc in Data Science and Big Data Technology</p>
+          <p class="profile-institution">Hong Kong University of Science and Technology (Guangzhou)</p>
           <div class="profile-details">
             <div>Guangzhou, China</div>
             <div>CGPA: 3.361/4.3</div>
@@ -340,17 +340,6 @@
           </div>
         </article>
 
-        <article class="item">
-          <div class="item-header">
-            <h3>Lingua-SQL: Multilingual and Multi-Dialect NL2SQL Framework</h3>
-            <span class="date">Apr 2025 – Dec 2025</span>
-          </div>
-          <p class="description">
-            Built an LLM-based NL2SQL framework that systematically generates diverse SQL candidates through multilingual and multi-dialect prompting. Designed an AST-based consistency-voting algorithm that selects candidates using query structure rather than execution results. On the BIRD development set, the method improved execution accuracy by approximately <strong>4%</strong> over conventional self-consistency, demonstrating the value of syntactic structure in candidate selection.
-          </p>
-        </article>
-      </section>
-
       <section aria-labelledby="projects-title">
         <h2 id="projects-title">Selected Projects</h2>
         <article class="item">
@@ -375,11 +364,11 @@
 
         <article class="item">
           <div class="item-header">
-            <h3>Campus Event Registration and Management System · Core Backend Architecture</h3>
-            <span class="date">Apr 2025 – Jun 2025</span>
+            <h3>Multi-Tenant Kubernetes Platform</h3>
+            <span class="date">Apr 2026 – May 2026</span>
           </div>
           <p class="description">
-            Independently designed and implemented the complete data-access and business-logic layers, supporting a reliable event lifecycle from creation and approval to check-in and archiving. Served as the principal author of the project report, documenting the backend architecture and database design.
+            Built a multi-tenant Kubernetes lab platform on K3s, providing dedicated namespaces for independent teams sharing cluster infrastructure. Implemented namespace-scoped <strong>RBAC</strong> using Roles, RoleBindings, and ServiceAccounts for tenant administrators, developers, and viewers. Applied least-privilege permissions to separate workload management from sensitive operations involving secrets, access policies, and cluster administration. Enforced <strong>resource governance</strong> through ResourceQuota and LimitRange. Added <strong>observability</strong> through Prometheus and Grafana configuration. Integrated <strong>Horizontal Pod Autoscaler (HPA)</strong> to adjust workload replicas according to CPU utilization, configuring replica bounds and resource requests to support elastic scaling under variable demand within tenant resource constraints.
           </p>
         </article>
       </section>
